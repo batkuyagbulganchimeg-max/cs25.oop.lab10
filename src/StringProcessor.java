@@ -6,7 +6,10 @@ public class StringProcessor {
 			Predicate<String> filter,
 			Function<String, String> transformer,
 			Consumer<String> printer) {
-		// Хэрэгжүүл: filter, transform, print хий
+		strings.stream()
+                .filter(filter)        
+                .map(transformer)      
+                .forEach(printer);
 	}
 
 	public static void main(String[] args) {
